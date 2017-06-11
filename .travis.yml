@@ -1,0 +1,5 @@
+language: go
+go:
+  - master
+before_install:
+  - go generate

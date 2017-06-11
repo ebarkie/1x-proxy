@@ -1,0 +1,6 @@
+.DS_Store
+._*
+*.swp
+1x-proxy
+decode_test.go
+version.go
