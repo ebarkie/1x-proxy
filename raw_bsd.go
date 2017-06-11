@@ -17,8 +17,10 @@ import (
 	"golang.org/x/sys/unix"
 )
 
-// ErrNoBpfDev occurs if no usable /dev/bpf* device was found.
-var ErrNoBpfDev = errors.New("no usable bpf device")
+// Errors.
+var (
+	ErrNoBpfDev = errors.New("No usable BPF device")
+)
 
 type ivalue struct {
 	name  [unix.IFNAMSIZ]byte

@@ -12,9 +12,10 @@ import (
 	"sync"
 )
 
-// ErrDupName occurs if same interface is specified multiple times.  This
-// isn't allowed since it would lead to duplicate packets.
-var ErrDupName = errors.New("same interface name specified multiple times")
+// Errors.
+var (
+	ErrDupName = errors.New("Same interface name specified multiple times")
+)
 
 // PAEProxy is used to track the interfaces that are part of the proxy bridge
 // and the incoming PAE packets from any of them.

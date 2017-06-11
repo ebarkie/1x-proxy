@@ -11,9 +11,10 @@ import (
 	"net"
 )
 
-// ErrNotImplemented occurs if this is run on an Operating System
-// where the lower level calls have not yet been implemented.
-var ErrNotImplemented = errors.New("not implemented")
+// Errors.
+var (
+	ErrNotImplemented = errors.New("Not implemented")
+)
 
 func listen(ifi *net.Interface, proto uint16) (fd, l int, err error) {
 	err = ErrNotImplemented
