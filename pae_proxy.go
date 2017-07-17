@@ -38,7 +38,7 @@ func init() {
 	proxy.in = make(chan PAEPacket)
 
 	// Run writer in the background.  This waits for new PAEPackets on the in
-	// channel and for each one that arrives it writes it each proxy member.
+	// channel and for each one that arrives it writes it to each proxy member.
 	go func() {
 		for {
 			p := <-proxy.in
@@ -66,7 +66,7 @@ func init() {
 // AddProxyMember adds the specified interface to the proxy bridge.
 func AddProxyMember(name string) error {
 	proto := uint16(0x888e) // ETH_P_PAE
-	// Since sysctl's are being used we're responsible for converting
+	// Since syscall's are being used we're responsible for converting
 	// the protocol from host byte order to network byte order.
 	if !isBigEndian {
 		proto = (proto<<8)&0xff00 | proto>>8
