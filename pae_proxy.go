@@ -40,8 +40,7 @@ func init() {
 	// Run writer in the background.  This waits for new PAEPackets on the in
 	// channel and for each one that arrives it writes it to each proxy member.
 	go func() {
-		for {
-			p := <-proxy.in
+		for p := range proxy.in {
 			log.Printf("%d bytes received on %s\n%s", len(p.b), p.ifi.Name, hex.Dump(p.b))
 
 			proxy.RLock()
