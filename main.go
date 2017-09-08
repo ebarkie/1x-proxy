@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	// Read interfaces names from flag arguments.
+	// Read interface names from flag arguments.
 	names := flag.String("names", "eth0:eth1", "colon delimited interface list")
 	flag.Parse()
 
