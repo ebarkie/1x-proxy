@@ -7,10 +7,9 @@ env:
   matrix:
     - ARCH=mipsle BIN=1x-proxy-erx
     - ARCH=mips64 BIN=1x-proxy-erl RUN_TESTS=true
-before_install:
-  - go generate
 install:
   - go mod download
+  - go generate
 script:
   - if [ "$RUN_TESTS" == true ]; then
       go test -race -v ./...;
