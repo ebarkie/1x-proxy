@@ -9,6 +9,8 @@ env:
     - ARCH=mips64 BIN=1x-proxy-erl RUN_TESTS=true
 before_install:
   - go generate
+install:
+  - go mod download
 script:
   - if [ "$RUN_TESTS" == true ]; then
       go test -race -v ./...;
