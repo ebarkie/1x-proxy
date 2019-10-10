@@ -1,8 +1,5 @@
 # 802.1x Port Access Entity Proxy
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://choosealicense.com/licenses/mit/)
-[![Build Status](https://travis-ci.org/ebarkie/1x-proxy.svg?branch=master)](https://travis-ci.org/ebarkie/1x-proxy)
-
 This proxies PAE protocol packets between interfaces. Per the 802.1d
 specification this traffic is not supposed to be bridged so most
 switches will not do so.

@@ -1,0 +1,35 @@
+include:
+  remote: 'https://gitlab.com/ebarkie/gitlab-ci/raw/master/go.yml'
+
+cache:
+  paths:
+    - version.go
+
+stages:
+  - setup
+  - test
+  - build
+
+.build_template: &build
+  stage: build
+  script:
+    - go build -o build/$BIN
+  artifacts:
+    paths:
+      - build
+  only:
+    - tags
+
+build:erx:
+  variables:
+    BIN: 1x-proxy-erx
+    GOOS: linux
+    GARCH: mipsle
+  <<: *build
+
+build:erl:
+  variables:
+    BIN: 1x-proxy-erl
+    GOOS: linux
+    GARCH: mips64
+  <<: *build
