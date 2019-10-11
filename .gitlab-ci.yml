@@ -10,26 +10,16 @@ stages:
   - test
   - build
 
-.build_template: &build
-  stage: build
-  script:
-    - go build -o build/$BIN
-  artifacts:
-    paths:
-      - build
-  only:
-    - tags
-
 build:erx:
+  extends: .build
   variables:
     BIN: 1x-proxy-erx
     GOOS: linux
     GARCH: mipsle
-  <<: *build
 
 build:erl:
+  extends: .build
   variables:
     BIN: 1x-proxy-erl
     GOOS: linux
     GARCH: mips64
-  <<: *build
