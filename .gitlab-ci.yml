@@ -3,6 +3,7 @@ include:
 
 cache:
   paths:
+    - .cache
     - version.go
 
 stages:
