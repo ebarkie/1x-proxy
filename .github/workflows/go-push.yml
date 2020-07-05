@@ -14,7 +14,7 @@ jobs:
         goos: [linux]
         goarch: [amd64, mips64, mipsle]
 
-    name: ${{ matrix.goos }}/${{ matrix.goarch }}
+    name: Build ${{ matrix.goos }}/${{ matrix.goarch }}
 
     runs-on: ubuntu-latest
 
