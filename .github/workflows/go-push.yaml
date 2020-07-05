@@ -1,0 +1,30 @@
+name: Push
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  build:
+    strategy:
+      fail-fast: true
+
+      matrix:
+        goos: [linux]
+        goarch: [amd64, mips64, mipsle]
+
+    name: ${{ matrix.goos }}/${{ matrix.goarch }}
+
+    runs-on: ubuntu-latest
+
+    env:
+      GOOS: ${{ matrix.goos }}
+      GOARCH: ${{ matrix.goarch }}
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Run Go 1.14 pipeline
+        uses: ebarkie/actions/go/1.14@v1
