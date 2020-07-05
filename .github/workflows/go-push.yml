@@ -28,3 +28,5 @@ jobs:
 
       - name: Run Go 1.14 pipeline
         uses: ebarkie/actions/go/1.14@v1
+        with:
+          build: true
