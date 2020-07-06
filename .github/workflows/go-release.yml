@@ -50,7 +50,7 @@ jobs:
 
       - name: Run Go 1.14 pipeline
         id: go
-        uses: ebarkie/actions/go/1.14@v1
+        uses: ebarkie/actions/go/1.14@master
         with:
           build_asset: true
 
