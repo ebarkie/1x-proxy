@@ -48,9 +48,9 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Run Go 1.14 pipeline
+      - name: Run Go 1.15 pipeline
         id: go
-        uses: ebarkie/actions/go/1.14@master
+        uses: ebarkie/actions/go/1.15@master
         with:
           build_asset: true
 
